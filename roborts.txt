@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloqueo de archivos internos o no relevantes para SEO (opcional)
+Disallow: /style.css
+Disallow: /*.pdf$
+
+# Dirección del Mapa del Sitio
+Sitemap: https://www.anamariasalinas.com/sitemap.xml

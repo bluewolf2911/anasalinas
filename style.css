@@ -1,0 +1,994 @@
+/* -------------------------------------------------------------
+ * Dra. Ana María Salinas Rendón - Web Design Complete CSS
+ * Paleta extraída del Logo:
+ * - Cyan / Teal Agua: #45959b (Acciones principales & Botones)
+ * - Morado Pizarra / Índigo: #545094 (Acentos & Títulos)
+ * - Verde Lima / Oliva: #a8b230 (Detalles secundarios)
+ * - Fondo Arena Cálido: #faf8f5 / #f2efea
+ * ------------------------------------------------------------- */
+
+:root {
+    --bg-main: #faf8f5;
+    --bg-card: #ffffff;
+    --primary-color: #2a737e;     /* Teal Azulado Profundo */
+    --accent-teal: #45959b;      /* Cyan Teal del Logo */
+    --accent-purple: #545094;    /* Morado Pizarra del Logo */
+    --accent-lime: #a8b230;      /* Verde Lima del Logo */
+    --text-dark: #23282b;         /* Texto Oscuro Neutro */
+    --text-muted: #5e686d;        /* Texto Secundario */
+    --border-color: #e5e0d8;      /* Borde Tono Arena */
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* -------------------------------------------------------------
+ * Navbar Header
+ * ------------------------------------------------------------- */
+.navbar {
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-logo-img {
+    height: 60px;
+    width: auto;
+    mix-blend-mode: multiply;
+    filter: contrast(1.1);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-teal);
+}
+
+.btn-nav {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 9px 18px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+}
+
+.btn-nav:hover {
+    background-color: var(--accent-purple);
+}
+
+/* -------------------------------------------------------------
+ * Compact Hero Section con Fondo de Flores (fondo.jpg)
+ * ------------------------------------------------------------- */
+.hero {
+    position: relative;
+    padding: 120px 20px;
+    background-image: url('images/fondo.jpg');
+    background-size: cover;
+    background-position: left center; /* Centra las flores sutilmente a la izquierda */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Capa muy sutil para asegurar la legibilidad del texto sin opacar las flores */
+    background: rgba(250, 248, 245, 0.45); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 720px;
+    z-index: 2;
+}
+
+.sub-heading {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+    color: var(--accent-purple);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: var(--text-muted);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-teal);
+    border-color: var(--accent-teal);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* -------------------------------------------------------------
+ * Profile Section & SCCP Badge Link
+ * ------------------------------------------------------------- */
+.profile-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.section-subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.profile-text h2 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    color: var(--primary-color);
+}
+
+.lead {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.profile-text p {
+    text-align: justify;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.profile-highlights {
+    display: flex;
+    gap: 35px;
+}
+
+.highlight-num {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    color: var(--accent-purple);
+    font-weight: 600;
+}
+
+.highlight-item h4 {
+    font-size: 13px;
+    margin: 3px 0;
+}
+
+.highlight-item p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.profile-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.image-card.main-img {
+    height: 550px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.doctor-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.sccp-badge-card {
+    position: absolute;
+    bottom: -25px;
+    left: -20px;
+    background: var(--bg-card);
+    padding: 16px 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(42, 115, 126, 0.08);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    max-width: 310px;
+    border-left: 4px solid var(--accent-purple);
+}
+
+.sccp-badge-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(42, 115, 126, 0.15);
+}
+
+.sccp-logo-wrapper {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.sccp-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sccp-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.sccp-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.3;
+    margin: 3px 0 5px;
+}
+
+.sccp-link {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* -------------------------------------------------------------
+ * Procedimientos (3 Recuadros)
+ * ------------------------------------------------------------- */
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    color: var(--primary-color);
+}
+
+.divider {
+    width: 45px;
+    height: 2px;
+    background-color: var(--accent-teal);
+    margin: 12px auto 35px;
+}
+
+.procedure-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.procedure-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.procedure-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.procedure-card-link:hover .procedure-card {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(42, 115, 126, 0.12);
+    border-color: var(--accent-teal);
+}
+
+.procedure-img-box {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    background-color: var(--bg-main);
+}
+
+.card-img-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.procedure-card-link:hover .card-img-real {
+    transform: scale(1.05);
+}
+
+.procedure-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 9px;
+    padding: 3px 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.procedure-info {
+    padding: 22px;
+}
+
+.procedure-title {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.procedure-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.btn-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-link:hover {
+    color: var(--accent-purple);
+}
+
+/* -------------------------------------------------------------
+ * Páginas Detalladas de Procedimientos
+ * ------------------------------------------------------------- */
+.page-banner {
+    background-color: #f2efea;
+    padding: 50px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------------------------------
+ * Page Banner Pabellon auricular
+ * ------------------------------------------------------------- */
+.page-banner {
+    position: relative;
+    padding: 60px 0;
+    background-image: url('images/fondo2.jpg');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.banner-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 248, 245, 0.65); /* Capa sutil de contraste */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.back-link:hover {
+    color: var(--accent-purple);
+}
+
+.page-banner h1 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.detail-grid {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.detail-content {
+    flex: 2;
+}
+
+.detail-content h2 {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.detail-block {
+    margin: 30px 0;
+}
+
+.detail-block h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.detail-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-block li {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.detail-block li::before {
+    content: "•";
+    color: var(--accent-teal);
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.detail-cta {
+    margin-top: 40px;
+}
+
+.detail-sidebar {
+    flex: 1;
+    min-width: 260px;
+}
+
+.sidebar-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--accent-teal);
+}
+
+.sidebar-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.tech-specs {
+    list-style: none;
+}
+
+.tech-specs li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.tech-specs li strong {
+    color: var(--primary-color);
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* -------------------------------------------------------------
+ * Banner de Instalaciones & Consultorio
+ * ------------------------------------------------------------- */
+.clinic-banner {
+    background: url('images/consultorio.jpg') center/cover no-repeat;
+    position: relative;
+    color: white;
+}
+
+.banner-box {
+    background-color: rgba(35, 40, 43, 0.88);
+    padding: 38px 40px;
+    max-width: 490px;
+    border-radius: 2px;
+    border-left: 4px solid var(--accent-teal);
+}
+
+.section-subtitle.light {
+    color: var(--accent-lime);
+}
+
+.banner-content h2 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    margin: 8px 0 15px;
+}
+
+.check-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.check-list li {
+    font-size: 13.5px;
+    margin-bottom: 10px;
+}
+
+/* -------------------------------------------------------------
+ * Integración de Quirófanos El Tesoro (QET) en Banner
+ * ------------------------------------------------------------- */
+.qet-info-box {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.qet-logo {
+    width: 110px; /* Tamaño escalado
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    /* Aplica fondo blanco sutil para destacar el logo verde si el fondo del recuadro es muy oscuro */
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.qet-text {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #e5e0d8;
+    margin: 0;
+}
+
+.qet-text strong {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .qet-info-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* -------------------------------------------------------------
+ * Contacto
+ * ------------------------------------------------------------- */
+.contact-grid {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.info-items {
+    margin-top: 25px;
+}
+
+.info-item {
+    margin-bottom: 18px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-teal);
+    margin-bottom: 3px;
+}
+
+.info-item p {
+    color: var(--text-muted);
+    font-size: 13.5px;
+}
+
+.contact-form-box {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+}
+
+.contact-form-box h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-teal);
+}
+
+.btn-full {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------
+ * Botón Rectangular de Instagram en Sección Contacto
+ * ------------------------------------------------------------- */
+.btn-instagram-rect {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 13px 24px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 2px; /* Mantiene la estética rectangular del sitio */
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.ig-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto Hover armónico con el morado del logo */
+.btn-instagram-rect:hover {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(84, 80, 148, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-instagram-rect:hover .ig-icon {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .btn-instagram-rect {
+        max-width: 100%; /* En móviles ocupa todo el ancho de la columna */
+    }
+}
+
+/* -------------------------------------------------------------
+ * Footer
+ * ------------------------------------------------------------- */
+.footer {
+    background-color: #1a1e20;
+    color: #b5c0c4;
+    padding: 60px 0 25px;
+}
+
+.footer-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+}
+
+.brand-col {
+    flex: 2;
+}
+
+.footer-logo-img {
+    height: 130px;
+    width: auto;
+    mix-blend-mode: screen; /* Adapta el fondo oscuro del footer */
+    margin-bottom: 18px;
+}
+
+/* Ajuste sutil en móviles para evitar que descompense el grid */
+@media (max-width: 768px) {
+    .footer-logo-img {
+        height: 75px;
+        margin: 0 auto 15px; /* Centrado en pantallas pequeñas */
+    }
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #8c999e;
+    margin-bottom: 12px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 8px;
+    font-size: 12.5px;
+}
+
+.footer-col a:hover {
+    color: var(--accent-lime);
+}
+
+.footer-bottom {
+    border-top: 1px solid #282f33;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 11.5px;
+    color: #6a767b;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+    .procedure-grid-three {
+        grid-template-columns: 1fr;
+    }
+    .profile-grid, 
+    .contact-grid,
+    .detail-grid {
+        flex-direction: column;
+    }
+    .nav-menu {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------
+ * Botón Flotante de WhatsApp Adaptado a la Paleta
+ * ------------------------------------------------------------- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary-color); /* Teal Azulado */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(42, 115, 126, 0.35);
+    z-index: 999;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.whatsapp-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto Hover armónico */
+.whatsapp-float:hover {
+    background-color: var(--accent-teal); /* Cyan Teal del Logo */
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(69, 149, 155, 0.45);
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+    transform: scale(1.1);
+}
+
+/* Tooltip lateral al pasar el cursor */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 68px;
+    background-color: var(--text-dark);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 3px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 74px;
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .whatsapp-tooltip {
+        display: none; /* Se oculta el tooltip en pantallas táctiles */
+    }
+}
