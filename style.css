@@ -261,7 +261,6 @@ img {
     text-align: justify;
     color: var(--text-muted);
     margin-bottom: 22px;
-    hyphens: auto;
     -webkit-hyphens: auto;
 }
 
