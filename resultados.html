@@ -29,12 +29,14 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand-logo">
                 <img src="images/logo.png" alt="Dra. Ana María Salinas R." class="header-logo-img">
             </a>
+
+            <!-- Menú Tradicional para PC -->
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html#perfil">Sobre la Doctora</a></li>
@@ -42,11 +44,23 @@
                     <li><a href="index.html#instalaciones">Consultorio</a></li>
                     <li><a href="index.html#centros-quirurgicos">Centros Quirúrgicos</a></li>
                     <li><a href="resultados.html">Resultados</a></li>
-
                 </ul>
             </nav>
+
             <div class="nav-actions">
                 <a href="index.html#contacto" class="btn-nav">Agendar Cita</a>
+
+                <!-- Menú Dropdown Exclusivo Móvil -->
+                <details class="mobile-dropdown">
+                    <summary class="btn-mobile-menu">Menú ▾</summary>
+                    <ul class="mobile-dropdown-list">
+                        <li><a href="index.html#perfil">Sobre la Doctora</a></li>
+                        <li><a href="index.html#procedimientos">Procedimientos</a></li>
+                        <li><a href="index.html#instalaciones">Consultorio</a></li>
+                        <li><a href="index.html#centros-quirurgicos">Centros Quirúrgicos</a></li>
+                        <li><a href="resultados.html">Resultados</a></li>
+                    </ul>
+                </details>
             </div>
         </div>
     </header>

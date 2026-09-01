@@ -1217,3 +1217,81 @@ img {
         height: 200px;
     }
 }
+
+/* -------------------------------------------------------------
+ * Menú Dropdown Exclusivo para Versión Móvil
+ * ------------------------------------------------------------- */
+
+/* Oculto por defecto en versión Escritorio / PC */
+.mobile-dropdown {
+    display: none;
+    position: relative;
+}
+
+/* Reglas aplicadas únicamente en pantallas táctiles y móviles (menores a 900px) */
+@media (max-width: 900px) {
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobile-dropdown {
+        display: inline-block;
+    }
+
+    /* Botón desplegable que dice "Menú" */
+    .btn-mobile-menu {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        padding: 8px 14px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        cursor: pointer;
+        list-style: none; /* Oculta la flecha nativa del navegador */
+        user-select: none;
+    }
+
+    .btn-mobile-menu::-webkit-details-marker {
+        display: none; /* Remueve flecha por defecto en Safari/iOS */
+    }
+
+    /* Caja Flotante del Desplegable */
+    .mobile-dropdown-list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 8px;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+        list-style: none;
+        padding: 10px 0;
+        min-width: 190px;
+        z-index: 200;
+    }
+
+    .mobile-dropdown-list li a {
+        display: block;
+        padding: 10px 18px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-dark);
+        border-bottom: 1px dashed var(--border-color);
+    }
+
+    .mobile-dropdown-list li:last-child a {
+        border-bottom: none;
+    }
+
+    .mobile-dropdown-list li a:hover {
+        background-color: var(--bg-main);
+        color: var(--accent-teal);
+    }
+}
