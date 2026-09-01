@@ -81,10 +81,18 @@ img {
 }
 
 .header-logo-img {
-    height: 60px;
+    height: 52px; /* Base Móvil */
     width: auto;
     mix-blend-mode: multiply;
     filter: contrast(1.1);
+    display: block;
+    transition: height 0.3s ease;
+}
+
+@media (min-width: 901px) {
+    .header-logo-img {
+        height: 80px; /* Escalado exclusivo para PC */
+    }
 }
 
 .nav-menu ul {
@@ -127,7 +135,7 @@ img {
     padding: 120px 20px;
     background-image: url('images/fondo.jpg');
     background-size: cover;
-    background-position: left center; /* Centra las flores sutilmente a la izquierda */
+    background-position: left center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -143,7 +151,6 @@ img {
     left: 0; 
     width: 100%; 
     height: 100%;
-    /* Capa muy sutil para asegurar la legibilidad del texto sin opacar las flores */
     background: rgba(250, 248, 245, 0.45); 
     z-index: 1;
 }
@@ -254,6 +261,8 @@ img {
     text-align: justify;
     color: var(--text-muted);
     margin-bottom: 22px;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .profile-highlights {
@@ -284,7 +293,7 @@ img {
 }
 
 .image-card.main-img {
-    height: 550px;
+    height: 550px; /* Rectangular estilo retrato */
     border-radius: 3px;
     overflow: hidden;
 }
@@ -410,19 +419,6 @@ img {
     transform: scale(1.05);
 }
 
-.procedure-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 9px;
-    padding: 3px 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    z-index: 2;
-}
-
 .procedure-info {
     padding: 22px;
 }
@@ -454,31 +450,12 @@ img {
 }
 
 /* -------------------------------------------------------------
- * Páginas Detalladas de Procedimientos
- * ------------------------------------------------------------- */
-.page-banner {
-    background-color: #f2efea;
-    padding: 50px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.back-link {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent-teal);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-/* -------------------------------------------------------------
- * Page Banner Pabellon auricular
+ * Páginas Detalladas de Procedimientos (Mamas, Auricular, Infantil)
  * ------------------------------------------------------------- */
 .page-banner {
     position: relative;
     padding: 60px 0;
-    background-image: url('images/fondo2.jpg');
+    background-image: url('images/fondo.jpg');
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
@@ -501,6 +478,16 @@ img {
     z-index: 2;
 }
 
+.back-link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
 .back-link:hover {
     color: var(--accent-purple);
 }
@@ -510,6 +497,10 @@ img {
     font-size: 38px;
     color: var(--primary-color);
     margin-top: 5px;
+}
+
+.detail-section {
+    padding: 60px 0;
 }
 
 .detail-grid {
@@ -553,6 +544,7 @@ img {
     margin-bottom: 10px;
     position: relative;
     padding-left: 20px;
+    line-height: 1.5;
 }
 
 .detail-block li::before {
@@ -571,7 +563,7 @@ img {
 
 .detail-sidebar {
     flex: 1;
-    min-width: 260px;
+    min-width: 270px;
 }
 
 .sidebar-card {
@@ -608,7 +600,7 @@ img {
 }
 
 /* -------------------------------------------------------------
- * Banner de Instalaciones & Consultorio
+ * Banner de Consultorio
  * ------------------------------------------------------------- */
 .clinic-banner {
     background: url('images/consultorio.jpg') center/cover no-repeat;
@@ -634,56 +626,128 @@ img {
     margin: 8px 0 15px;
 }
 
-.check-list {
-    list-style: none;
-    margin-top: 15px;
+/* -------------------------------------------------------------
+ * Sección de Centros Quirúrgicos
+ * ------------------------------------------------------------- */
+.surgical-centers-section {
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.check-list li {
-    font-size: 13.5px;
+.section-desc-center {
+    max-width: 700px;
+    margin: -20px auto 35px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.centers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.center-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 35px 30px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.center-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(42, 115, 126, 0.08);
+}
+
+.center-badge {
+    display: inline-block;
+    background-color: rgba(69, 149, 155, 0.12);
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+}
+
+.center-badge.pediatrico {
+    background-color: rgba(84, 80, 148, 0.12);
+    color: var(--accent-purple);
+}
+
+.center-card-header h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-/* -------------------------------------------------------------
- * Integración de Quirófanos El Tesoro (QET) en Banner
- * ------------------------------------------------------------- */
-.qet-info-box {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+.center-card-header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.center-logos-flex {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.center-logos-flex.single-center {
+    justify-content: center;
+}
+
+.center-logo-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-box {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
-    gap: 18px;
+    justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
-.qet-logo {
-    width: 110px; /* Tamaño escalado
-    height: auto;
+.center-logo-img {
+    max-height: 65px;
+    max-width: 100%;
+    width: auto;
     object-fit: contain;
-    flex-shrink: 0;
-    /* Aplica fondo blanco sutil para destacar el logo verde si el fondo del recuadro es muy oscuro */
-    background: #ffffff;
-    padding: 6px 10px;
-    border-radius: 4px;
 }
 
-.qet-text {
-    font-size: 12.5px;
-    line-height: 1.45;
-    color: #e5e0d8;
-    margin: 0;
+/* Ajuste específico para equilibrar el logo de IQ InterQuirófanos */
+.center-logo-img[src*="iq.png"] {
+    max-height: 120px;
+    transform: scale(1.15);
 }
 
-.qet-text strong {
-    color: #ffffff;
+.noel-img {
+    max-height: 70px;
 }
 
-@media (max-width: 600px) {
-    .qet-info-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
+.center-logo-item h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
 /* -------------------------------------------------------------
@@ -784,7 +848,7 @@ img {
     background-color: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    border-radius: 2px; /* Mantiene la estética rectangular del sitio */
+    border-radius: 2px;
     font-family: var(--font-body);
     font-size: 11px;
     font-weight: 600;
@@ -801,7 +865,6 @@ img {
     transition: transform 0.3s ease;
 }
 
-/* Efecto Hover armónico con el morado del logo */
 .btn-instagram-rect:hover {
     background-color: var(--accent-purple);
     border-color: var(--accent-purple);
@@ -812,12 +875,6 @@ img {
 
 .btn-instagram-rect:hover .ig-icon {
     transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .btn-instagram-rect {
-        max-width: 100%; /* En móviles ocupa todo el ancho de la columna */
-    }
 }
 
 /* -------------------------------------------------------------
@@ -848,16 +905,8 @@ img {
 .footer-logo-img {
     height: 130px;
     width: auto;
-    mix-blend-mode: screen; /* Adapta el fondo oscuro del footer */
+    mix-blend-mode: screen;
     margin-bottom: 18px;
-}
-
-/* Ajuste sutil en móviles para evitar que descompense el grid */
-@media (max-width: 768px) {
-    .footer-logo-img {
-        height: 75px;
-        margin: 0 auto 15px; /* Centrado en pantallas pequeñas */
-    }
 }
 
 .footer-col p {
@@ -895,9 +944,12 @@ img {
     color: #6a767b;
 }
 
-/* Responsive Media Queries */
+/* -------------------------------------------------------------
+ * Responsive Media Queries
+ * ------------------------------------------------------------- */
 @media (max-width: 900px) {
-    .procedure-grid-three {
+    .procedure-grid-three,
+    .centers-grid {
         grid-template-columns: 1fr;
     }
     .profile-grid, 
@@ -910,6 +962,19 @@ img {
     }
 }
 
+@media (max-width: 768px) {
+    .footer-logo-img {
+        height: 120px;
+        margin: 0 auto 15px;
+    }
+    .btn-instagram-rect {
+        max-width: 100%;
+    }
+    .center-logos-flex {
+        flex-direction: column;
+    }
+}
+
 /* -------------------------------------------------------------
  * Botón Flotante de WhatsApp Adaptado a la Paleta
  * ------------------------------------------------------------- */
@@ -919,7 +984,7 @@ img {
     right: 30px;
     width: 56px;
     height: 56px;
-    background-color: var(--primary-color); /* Teal Azulado */
+    background-color: var(--primary-color);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
@@ -937,9 +1002,8 @@ img {
     transition: transform 0.3s ease;
 }
 
-/* Efecto Hover armónico */
 .whatsapp-float:hover {
-    background-color: var(--accent-teal); /* Cyan Teal del Logo */
+    background-color: var(--accent-teal);
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 8px 24px rgba(69, 149, 155, 0.45);
 }
@@ -948,7 +1012,6 @@ img {
     transform: scale(1.1);
 }
 
-/* Tooltip lateral al pasar el cursor */
 .whatsapp-tooltip {
     position: absolute;
     right: 68px;
@@ -974,7 +1037,6 @@ img {
     right: 74px;
 }
 
-/* Ajuste responsive para móviles */
 @media (max-width: 768px) {
     .whatsapp-float {
         bottom: 20px;
@@ -989,6 +1051,6 @@ img {
     }
 
     .whatsapp-tooltip {
-        display: none; /* Se oculta el tooltip en pantallas táctiles */
+        display: none;
     }
 }
